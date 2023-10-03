@@ -9,13 +9,19 @@
     <script src="https://unpkg.com/htmx.org/dist/ext/json-enc.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
     <title>Todo website</title>
-</head>
-<body>
-    <header>
-        <hgroup>
-            <h1>TODO WEBSITE</h1>
-            <h2>using bun</h2>
-        </hgroup>
-    </header>
+<header class = "container">
+    <hgroup>
+        <h1>TODO WEBSITE</h1>
+        <h2>using bun</h2>
+    </hgroup>
+</header>
+<main class = "container">
+    <form>
+        <label for="todo"> TODO WEBSITE</label>
+        <input id="todo" type="text" aria-label="Creation of TODO website using bun" placeholder="New Bun todo">
+        <button type= "submit">Create TODO</button>
+    </form>
+    <section id="todos" hx-get="/todos" hx-trigger="load"></section>
+</main>
 </body>
 </html>
