@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,24 +8,99 @@
     <script src="https://unpkg.com/htmx.org/dist/ext/json-enc.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
     <title>Bun Todo</title>
+    <style>
+        body {
+            background-color: #f0f0f0; /* Background color */
+            font-family: Arial, sans-serif; /* Font family */
+            margin: 0;
+            padding: 0;
+            display: flex; /* Use flex to cover the entire viewport */
+            flex-direction: column; /* Column layout for children */
+            min-height: 100vh; /* Minimum height to cover the viewport */
+        }
+
+        .container {
+            background-color: #fff; /* Container background color */
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Box shadow for container */
+            margin: 20px auto; /* Center the container */
+            max-width: 600px; /* Limit container width */
+            flex: 1; /* Grow to fill available space */
+        }
+
+        h1 {
+            color: #563232; /* Heading text color */
+        }
+
+        h2 {
+            color: #442828; /* Subheading text color */
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            color: #472d2d; /* Label text color */
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #996464; /* Input border color */
+            border-radius: 3px;
+        }
+
+        button[type="submit"] {
+            background-color: #3a2929; /* Button background color */
+            color: #000000; /* Button text color */
+            border: none;
+            padding: 10px 20px;
+            margin-top: 10px;
+            cursor: pointer;
+            border-radius: 3px;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #000000; /* Hover state color */
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            border: 1px solid #000000; /* Todo item border color */
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 3px;
+            display: flex;
+            align-items: center;
+        }
+
+        input[type="checkbox"] {
+            margin-right: 10px;
+        }
+    </style>
 </head>
-
 <body>
+    <!-- Rest of your HTML content here -->
     <header class="container">
-        <hgroup>
-            <h1>TODO Website</h1>
-            <h2>Using Bun</a></h2>
-        </hgroup>
+        <h1>TODO Website</h1>
+        <h2>Using Bun</h2>
     </header>
-
     <main class="container">
         <form hx-post="/todos" hx-target="#todos" hx-ext="json-enc" _="on submit target.reset()">
             <label for="todo">Let's be productive together</label>
             <input id="todo" name="todo" type="text" aria-label="Create Bun Todo" placeholder="New Bun todo">
             <button type="submit">Add stuff :D</button>
         </form>
-
         <section id="todos" hx-get="/todos" hx-trigger="load"></section>
     </main>
 </body>
 </html>
+
