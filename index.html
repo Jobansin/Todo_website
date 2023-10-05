@@ -9,21 +9,9 @@
     <script src="https://unpkg.com/htmx.org/dist/ext/json-enc.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
     <title>Bun Todo</title>
-    <style>
-        body {
-            background-image: url('/Users/jobonsingh/Desktop/Todo_website/lol.jpg'); /* Replace 'your-image.jpg' with your image file path */
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-attachment: fixed; /* Keeps the background fixed while scrolling */
-            background-position: center;
-            margin: 0; /* Remove default body margin to fill the whole viewport */
-            padding: 0; /* Remove default body padding */
-        }
-    </style>
 </head>
 
 <body>
-    <!-- Rest of your HTML content here -->
     <header class="container">
         <hgroup>
             <h1>TODO Website</h1>
@@ -41,5 +29,4 @@
         <section id="todos" hx-get="/todos" hx-trigger="load"></section>
     </main>
 </body>
-
 </html>
